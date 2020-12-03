@@ -6,7 +6,7 @@ PyTorch implementation of waveRNN vocoder, which predicts a raw waveform from a 
 
 ### Configuration
 
-Configuration parameters / hyperparameters are specified in `config.json`, and these values are used across all scripts.
+Configuration parameters / hyperparameters are specified in `config.py`, and these values are used across all scripts.
 
 ### 0. Download dataset
 
