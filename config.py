@@ -2,7 +2,7 @@
 
 
 class Config:
-    """waveRNN configuration class"""
+    """WaveRNN configuration class"""
 
     # Audio processing parameters
     sampling_rate = 22050
@@ -18,10 +18,6 @@ class Config:
     fmin = 125
     fmax = 7600
 
-    rescaling = False
-    rescaling_max = 0.999
-    normalization_clip = True
-
     # Model parameters
     rnn_dims = 680
     fc_dims = 512
@@ -29,7 +25,7 @@ class Config:
 
     upsample_factors = (
         4, 4, 16
-    )  # Upsample factors must multiply to be equal top hop_size: 4x4x16 = 256
+    )  # Upsample factors must multiply to be equal to hop_size: 4x4x16 = 256
 
     compute_dims = 128
     res_out_dims = 128
