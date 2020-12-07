@@ -10,13 +10,13 @@ from scipy.io import wavfile
 class Audio():
     """Audio processing class
     """
-    def __init__(self, sampling_rate, premephasis_factor, min_db_level,
+    def __init__(self, sampling_rate, preemphasis_factor, min_db_level,
                  ref_db_level, fft_size, win_length, hop_size, num_mels, fmin,
                  fmax):
         """Initalize the audio processing class
         """
         self.sampling_rate = sampling_rate
-        self.premephasis_factor = premephasis_factor
+        self.preemphasis_factor = preemphasis_factor
         self.min_db_level = min_db_level
         self.ref_db_level = ref_db_level
         self.fft_size = fft_size
@@ -81,7 +81,7 @@ class Audio():
     def preemphasis(self, y):
         """Apply preemphasis to the signal
         """
-        b = np.array([1., -self.premephasis_factor], y.dtype)
+        b = np.array([1., -self.preemphasis_factor], y.dtype)
         a = np.array([1.], y.dtype)
 
         return signal.lfilter(b, a, y)
@@ -90,7 +90,7 @@ class Audio():
         """Invert the pre-emphasis applied to the signal
         """
         b = np.array([1.], y.dtype)
-        a = np.array([1., -self.premephasis_factor], y.dtype)
+        a = np.array([1., -self.preemphasis_factor], y.dtype)
 
         return signal.lfilter(b, a, y)
 
