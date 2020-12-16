@@ -10,11 +10,12 @@ from scipy.io import wavfile
 class Audio():
     """Audio processing class
     """
-    def __init__(self, sampling_rate, preemphasis_factor, min_db_level,
-                 ref_db_level, fft_size, win_length, hop_size, num_mels, fmin,
-                 fmax):
+    def __init__(self, num_bits, sampling_rate, preemphasis_factor,
+                 min_db_level, ref_db_level, fft_size, win_length, hop_size,
+                 num_mels, fmin, fmax):
         """Initalize the audio processing class
         """
+        self.num_bits = num_bits
         self.sampling_rate = sampling_rate
         self.preemphasis_factor = preemphasis_factor
         self.min_db_level = min_db_level
@@ -101,3 +102,10 @@ class Audio():
         S = self._amp_to_db(self._linear_to_mel(np.abs(D))) - self.ref_db_level
 
         return self._normalize(S)
+
+    def quantize_signal(self, y):
+        """Quantize audio signal
+        """
+        y_quantized = (y + 1.) * (2**self.num_bits - 1) / 2
+
+        return y_quantized.astype(np.int)
