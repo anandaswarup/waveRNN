@@ -6,7 +6,7 @@ PyTorch implementation of waveRNN based neural vocoder, which predicts a raw wav
 
 ### Configuration
 
-Configuration parameters / hyperparameters are specified in ``config.yaml, and these values are used across all scripts.
+Configuration parameters / hyperparameters are specified in `config.yaml`, and these values are used across all scripts.
 
 ### 0. Download dataset
 
@@ -33,4 +33,4 @@ The code in this repository is based on the code in the following repositories
 
 ## References
 1. [arXiv:1802.08435](https://arxiv.org/pdf/1802.08435.pdf): Efficient Neural Audio Synthesis
-2. [arXiv:1811.06292v2](https://arxiv.org/pdf/1811.06292.pdf): Towards achieving robust universal neural vocoding
+2. [arXiv:1811.06292v2](https://arxiv.org/pdf/1811.06292.pdf): Towards Achieving Robust Universal Neural Vocoding
