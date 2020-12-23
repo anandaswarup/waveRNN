@@ -1,0 +1,32 @@
+# Configuration parameters
+audio:
+  sampling_rate: 22050
+  preemph_factor: 0.97
+  max_db_level: 100
+  ref_db_level: 20
+
+  n_fft: 1024
+  win_length: 1100
+  hop_length: 275
+  n_mels: 80
+
+  num_bits: 10
+
+model:
+  embedding_dim: 256
+  conditioning_dim: 128
+  rnn_dim: 896
+  linear_dim: 1024
+
+training:
+  batch_size: 16
+  num_steps: 150000
+  sample_frames: 24
+
+  lr_schedule: "step"
+  init_lr: 4e-4
+  lr_step_size: 25000
+  gamma: 0.5
+
+  checkpoint_interval: 25000
+  num_workers: 8
