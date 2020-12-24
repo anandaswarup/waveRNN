@@ -13,10 +13,10 @@ audio:
   num_bits: 10
 
 model:
-  embedding_dim: 256
-  conditioning_dim: 128
-  rnn_dim: 896
-  linear_dim: 1024
+  audio_embedding_dim: 256
+  conditioning_rnn_size: 128
+  rnn_size: 896
+  affine_size: 1024
 
 training:
   batch_size: 16
