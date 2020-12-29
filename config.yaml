@@ -1,11 +1,13 @@
 # Configuration parameters
+dataset: "ljspeech"
+
 audio:
   sampling_rate: 22050
   preemph_factor: 0.97
   max_db_level: 100
   ref_db_level: 20
 
-  n_fft: 1024
+  n_fft: 2048
   win_length: 1100
   hop_length: 275
   n_mels: 80
