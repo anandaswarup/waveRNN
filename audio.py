@@ -53,7 +53,7 @@ class AudioProcessor():
                                              norm=1,
                                              power=1)
 
-        mel = librosa.amplitude_to_mel(mel, top_db=None) - self.ref_db_level
+        mel = librosa.amplitude_to_db(mel, top_db=None) - self.ref_db_level
         mel = np.maximum(mel, -self.max_db_level)
 
         return mel / self.max_db_level
