@@ -15,9 +15,11 @@ Configuration parameters / hyperparameters are specified in `config.yaml`, and t
 ### 1. Preprocessing
 Extract mel-spectrograms and preprocess audio:
 
-`python preprocess.py --config_file <PATH TO CONFIG FILE  (in yaml format)> \
+```
+python preprocess.py --config_file <PATH TO CONFIG FILE  (in yaml format)> \
                      --dataset_dir <PATH TO DATASET DIR> \
-                     --out_dir <PATH TO OUT DIR>`
+                     --out_dir <PATH TO OUT DIR>
+```
 
 ### 2. Training
 
