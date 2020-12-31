@@ -13,8 +13,11 @@ Configuration parameters / hyperparameters are specified in `config.yaml`, and t
 - LJSpeech (en): https://keithito.com/LJ-Speech-Dataset/
 
 ### 1. Preprocessing
+Extract mel-spectrograms and preprocess audio:
 
-COMING SOON
+`python preprocess.py --config_file <PATH TO CONFIG FILE  (in yaml format)> \
+                     --dataset_dir <PATH TO DATASET DIR> \
+                     --out_dir <PATH TO OUT DIR>`
 
 ### 2. Training
 
