@@ -49,4 +49,4 @@ class VocoderDataset(Dataset):
         p, q = pos, pos + self.sample_frames
         wav = wav[p * self.hop_length:q * self.hop_length + 1]
 
-        return torch.LongTensor(wav), torch.LongTensor(mel.T)
+        return torch.LongTensor(wav), torch.FloatTensor(mel.T)
