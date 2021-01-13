@@ -3,23 +3,11 @@
 PyTorch implementation of waveRNN based neural vocoder, which predicts a raw waveform from a mel-spectrogram. 
 
 ## Getting started
-
-### Configuration
-
-Configuration parameters / hyperparameters are specified in `config.yaml`, and these values are used across all scripts.
-
 ### 0. Download dataset
 
 - LJSpeech (en): https://keithito.com/LJ-Speech-Dataset/
 
 ### 1. Preprocessing
-Extract mel-spectrograms and preprocess audio:
-
-```
-python preprocess.py --config_file <PATH TO CONFIG FILE  (in yaml format)> \
-                     --dataset_dir <PATH TO DATASET DIR> \
-                     --out_dir <PATH TO OUT DIR>
-```
 
 ### 2. Training
 
