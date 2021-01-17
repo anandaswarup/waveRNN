@@ -21,7 +21,7 @@ class Config:
 
     # WaveRNN model parameters
     upsample_factors = (
-        5, 5, 11)  # upsample factors must correctly factorize hopp length
+        5, 5, 11)  # upsample factors must correctly factorize hop length
     rnn_dims = 512
     fc_dims = 512
     compute_dims = 128
