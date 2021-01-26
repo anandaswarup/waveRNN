@@ -1,4 +1,5 @@
 {
+    "dataset": "ljspeech",
     "audio": {
         "sampling_rate": 22050,
         "max_db_level": 100,
