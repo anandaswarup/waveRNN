@@ -77,7 +77,7 @@ class WaveRNN(nn.Module):
             Args:
                 mel (tensor): Mel spectrogram of shape [1, seq_len, n_mels]
             Returns:
-                (numpy array): Generated waveform of shape [seq_len  * hop_length]
+                (numpy array): Generated waveform of shape [seq_len * hop_length]
         """
         wav_hat = []
 
