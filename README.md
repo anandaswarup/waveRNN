@@ -40,13 +40,26 @@ LJSpeech
 └── train.txt
 ```
 train.txt and eval.txt contain the list of file ids to be used for training and eval respectively. `mel/` and `qwav/` 
-directories contain the mel-spectrograms and 10 bit mu-law quantized wav files respectively.
+directories contain the mel-spectrograms and 10 bit mu-law quantized wav files respectively, to be used for training
+the WaveRNN model.
 
-### 2. Training
+### 2. Configuration / Hyperparameters
 
-COMING SOON
+All configuration parameters / hyperparameters are specified in a json format, and can be found in `config.json`
+### 3. Training
 
-### 3. Generation
+```
+python train.py --cfg_file <Path to the configuration file (in json format)>  \
+                --data_dir <Path to the data dir (the output dir created during the preprocessing step)> \
+                --checkpoints_dir <Path to the dir where the training checkpoints will be saved> \ 
+                --logs_dir <Path to the dir where the training logs will be written> \
+                --checkpoint_path <(Optional) If specified load checkpoint and restart training from that point>
+```
+
+Running this model will create `checkpoints_dir` and `logs_dir` at the specified paths, and all training checkpoints
+and training logs will be written to the corresponding directories
+
+### 4. Generation
 
 COMING SOON
 
