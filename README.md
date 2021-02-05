@@ -9,6 +9,13 @@ PyTorch implementation of waveRNN based neural vocoder, which predicts a raw wav
 
 ### 1. Preprocessing
 
+```python
+python preprocess.py \
+        --cfg_file <Path to the configuration file> \
+        --dataset_dir <Path to the dataset dir> \
+        --out_dir <Path to the output dir>
+```
+
 ### 2. Training
 
 COMING SOON
