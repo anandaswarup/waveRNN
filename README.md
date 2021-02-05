@@ -10,11 +10,12 @@ PyTorch implementation of waveRNN based neural vocoder, which predicts a raw wav
 ### 1. Preprocessing
 
 ```
-python preprocess.py \
-        --cfg_file <Path to the configuration file> \
-        --dataset_dir <Path to the dataset dir> \
-        --out_dir <Path to the output dir>
+python preprocess.py --cfg_file <Path to the configuration file> \
+                     --dataset_dir <Path to the dataset dir> \
+                     --out_dir <Path to the output dir>
 ```
+Currently the preprocessing script supports the following datasets:
+- LJSpeech (en, single speaker)
 
 ### 2. Training
 
