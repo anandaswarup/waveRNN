@@ -18,7 +18,7 @@
         "fc_size": 1024
     },
     "training": {
-        "batch_size": 32,
+        "batch_size": 16,
         "num_steps": 150000,
         "sample_frames": 24,
         "learning_rate": 4e-4,
