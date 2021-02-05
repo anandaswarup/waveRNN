@@ -50,14 +50,14 @@ All configuration parameters / hyperparameters are specified in a json format, a
 
 ```
 python train.py --cfg_file <Path to the configuration file (in json format)>  \
-                --data_dir <Path to the data dir (the output dir created during the preprocessing step)> \
-                --checkpoints_dir <Path to the dir where the training checkpoints will be saved> \ 
-                --logs_dir <Path to the dir where the training logs will be written> \
-                --checkpoint_path <(Optional) If specified load checkpoint and restart training from that point>
+                --data_dir <Path to the data dir created during the preprocessing step)> \
+                --checkpoints_dir <Path to the dir to save the training checkpoints> \ 
+                --logs_dir <Path to the dir to save the training logs> \
+                --checkpoint_path <(Optional) If specified load checkpoint and restart training>
 ```
 
 Running this model will create `checkpoints_dir` and `logs_dir` at the specified paths, and all training checkpoints
-and training logs will be written to the corresponding directories
+as well as logs will be written to the corresponding directories
 
 ### 4. Generation
 
