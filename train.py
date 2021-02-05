@@ -111,6 +111,7 @@ def train_model(cfg, data_dir, checkpoints_dir, logs_dir, chcekpoint_path):
 
     # Training loop
     for epoch in range(start_epoch, num_epochs + 1):
+        avg_loss = 0.0
         for idx, (mel, quantized_audio) in enumerate(data_loader, 1):
 
             quantized_audio, mel = quantized_audio.to(device), mel.to(device)
@@ -131,13 +132,15 @@ def train_model(cfg, data_dir, checkpoints_dir, logs_dir, chcekpoint_path):
                 save_checkpoint(checkpoints_dir, model, optimizer,
                                 lr_scheduler, global_step)
 
-            # Log the training progress
-            print(
-                f"Epoch: {epoch:09d}, Step: {global_step:09d}, Loss: {loss.item():09f}, {lr_scheduler.get_last_lr()}"
-            )
+            avg_loss += (loss.item() - avg_loss) / idx
 
             # Increment the step
             global_step += 1
+
+        # Log the training progress
+        print(
+            f"Epoch: {epoch:09d}, Step: {global_step:09d}, Loss: {avg_loss:03f}, {lr_scheduler.get_last_lr()}"
+        )
 
 
 if __name__ == "__main__":
