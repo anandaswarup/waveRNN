@@ -27,16 +27,16 @@ LJSpeech
 │   ├── LJ001-0003.npy
 │   ├── LJ001-0004.npy
 │   ├── LJ001-0005.npy
-│   ├── .
-│   └── .
+│   .
+│   .
 ├── qwav
 │   ├── LJ001-0001.npy
 │   ├── LJ001-0002.npy
 │   ├── LJ001-0003.npy
 │   ├── LJ001-0004.npy
 │   ├── LJ001-0005.npy
-│   ├── .
-│   └── .
+│   .
+│   .
 └── train.txt
 ```
 train.txt and eval.txt contain the list of file ids to be used for training and eval respectively. `mel/` and `qwav/` 
