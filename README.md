@@ -17,6 +17,31 @@ python preprocess.py --cfg_file <Path to the configuration file> \
 Currently the preprocessing script supports the following datasets:
 - LJSpeech (en, single speaker)
 
+After running the preprocessing script, the following directory structure will be created in the output dir
+```
+LJSpeech
+├── eval.txt
+├── mel
+│   ├── LJ001-0001.npy
+│   ├── LJ001-0002.npy
+│   ├── LJ001-0003.npy
+│   ├── LJ001-0004.npy
+│   ├── LJ001-0005.npy
+│   ├── .
+│   └── .
+├── qwav
+│   ├── LJ001-0001.npy
+│   ├── LJ001-0002.npy
+│   ├── LJ001-0003.npy
+│   ├── LJ001-0004.npy
+│   ├── LJ001-0005.npy
+│   ├── .
+│   └── .
+└── train.txt
+```
+train.txt and eval.txt contain the list of file ids to be used for training and eval respectively. `mel/` and `qwav/` 
+directories contain the mel-spectrograms and 10 bit mu-law quantized wav files respectively.
+
 ### 2. Training
 
 COMING SOON
