@@ -11,10 +11,10 @@ PyTorch implementation of waveRNN based neural vocoder, which predicts a raw wav
 
 COMING SOON
 
-### 3. Training
+### 2. Training
 
 COMING SOON
-### 4. Generation
+### 3. Generation
 
 COMING SOON
 
