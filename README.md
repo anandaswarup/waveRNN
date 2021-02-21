@@ -12,7 +12,8 @@ The preprocessing code currently supports the following datasets:
 - LJSpeech (en)
 
 Run
-```python preprocess.py \
+```
+python preprocess.py \
         --dataset_dir <Path to the dataset dir (Location where the dataset is downloaded)>  \
         --out_dir <Path to the output dir (Location where processed dataset will be written)>
 ```
