@@ -26,7 +26,7 @@ class Config:
 
     # Training
     batch_size = 16
-    num_steps = 150000
+    num_steps = 200000
     sample_frames = 24
     learning_rate = 4e-4
     lr_scheduler_step_size = 25000
