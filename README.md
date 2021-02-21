@@ -8,15 +8,14 @@ PyTorch implementation of waveRNN based neural vocoder, which predicts a raw wav
 - LJSpeech (en): https://keithito.com/LJ-Speech-Dataset/
 
 ### 1. Preprocessing
-The preprocessing code currently supports the following datasets:
-- LJSpeech (en)
-
-Run
 ```
 python preprocess.py \
-        --dataset_dir <Path to the dataset dir (Location where the dataset is downloaded)>  \
+        --dataset_dir <Path to the dataset dir (Location where the dataset is downloaded)>\
         --out_dir <Path to the output dir (Location where processed dataset will be written)>
 ```
+
+The preprocessing code currently supports the following datasets:
+- LJSpeech (en)
 
 ### 2. Training
 
