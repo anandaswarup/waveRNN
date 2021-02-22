@@ -78,7 +78,7 @@ def process_wav(mel_dir, qwav_dir, wav_path):
     np.save(mel_path, mel)
     np.save(qwav_path, qwav)
 
-    return mel_path, qwav_path, mel.shape[-1]
+    return filename, mel.shape[-1]
 
 
 def write_metadata(metadata, out_dir):
@@ -86,9 +86,9 @@ def write_metadata(metadata, out_dir):
     """
     with open(os.path.join(out_dir, "train.txt"), "w") as file_writer:
         for m in metadata:
-            file_writer.write("|".join([str(x) for x in m]) + "\n")
+            file_writer.write(m[0] + "\n")
 
-    frames = sum([m[2] for m in metadata])
+    frames = sum([m[1] for m in metadata])
     frame_shift_ms = cfg.hop_length / cfg.sampling_rate * 1000
     hours = frames * frame_shift_ms / (3600 * 1000)
 
