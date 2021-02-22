@@ -43,7 +43,7 @@ def load_checkpoint(checkpoint_path, model, optimizer, scheduler):
     return checkpoint["step"]
 
 
-def train_model(data_dir, checkpoint_dir, resume_checkpoint_path=None):
+def train_model(train_data_dir, checkpoint_dir, resume_checkpoint_path=None):
     """Train the model
     """
     os.makedirs(checkpoint_dir, exist_ok=True)
@@ -75,7 +75,7 @@ def train_model(data_dir, checkpoint_dir, resume_checkpoint_path=None):
         global_step = 0
 
     # Instantiate the dataloader
-    dataset = VocoderDataset(data_dir)
+    dataset = VocoderDataset(train_data_dir)
     dataloader = DataLoader(dataset,
                             batch_size=cfg.batch_size,
                             shuffle=True,
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train the WaveRNN model")
 
     parser.add_argument(
-        "--data_dir",
+        "--train_data_dir",
         help="Path to dir containing the data to train the model",
         required=True)
 
@@ -135,8 +135,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    data_dir = args.data_dir
+    train_data_dir = args.train_data_dir
     checkpoint_dir = args.checkpoint_dir
     resume_checkpoint_path = args.resume_checkpoint_path
 
-    train_model(data_dir, checkpoint_dir, resume_checkpoint_path)
+    train_model(train_data_dir, checkpoint_dir, resume_checkpoint_path)
