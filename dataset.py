@@ -20,22 +20,19 @@ def _load_training_instances(filename):
         instance.strip("\n") for instance in training_instances
     ]
 
-    training_instances = [
-        instance.split("|") for instance in training_instances
-    ]
-
     return training_instances
 
 
 class VocoderDataset(Dataset):
     """Vocoder dataset
     """
-    def _init__(self, data_dir):
+    def __init__(self, train_data_dir):
         """Instantiate the dataset
         """
         self.training_instances = _load_training_instances(
-            os.path.join(data_dir, "train.txt"))
+            os.path.join(train_data_dir, "train.txt"))
 
+        self.train_data_dir = train_data_dir
         self.sample_frames = cfg.sample_frames
         self.hop_length = cfg.hop_length
 
@@ -43,9 +40,11 @@ class VocoderDataset(Dataset):
         return len(self.training_instances)
 
     def __getitem__(self, index):
-        mel_path, qwav_path, _ = self.training_instances[index][
-            0], self.training_instances[index][1], self.training_instances[
-                index][2]
+        mel_path = os.path.join(self.train_data_dir, "mel",
+                                self.training_instances[index] + ".npy")
+
+        qwav_path = os.path.join(self.train_data_dir, "qwav",
+                                 self.training_instances[index] + ".npy")
 
         mel = np.load(mel_path)
         qwav = np.load(qwav_path)
