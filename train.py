@@ -23,7 +23,7 @@ def save_checkpoint(checkpoint_dir, model, optimizer, scheduler, step):
         "step": step,
     }
 
-    checkpoint_path = os.path.join(checkpoint_dir, f"model-{step:9d}.pth")
+    checkpoint_path = os.path.join(checkpoint_dir, f"model_step{step:09d}.pth")
 
     torch.save(checkpoint_state, checkpoint_path)
     print(f"Written checkpoint: {checkpoint_path} to disk")
