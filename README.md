@@ -18,12 +18,19 @@ The preprocessing code currently supports the following datasets:
 - LJSpeech (en)
 
 ### 2. Training
-
-COMING SOON
+```
+python train.py \
+     --train_data_dir <Path to the dir containing the data to train the model> \
+     --checkpoint_dir <Path to the dir where the training checkpoints will be saved> \
+     --resume_checkpoint_path <If specified load checkpoint and resume training from that point>
+```
 ### 3. Generation
-
-COMING SOON
-
+```
+python generate.py \
+    --checkpoint_path <Path to the checkpoint to use to instantiate the model> \
+    --eval_data_dir <Path to the dir containing the mel spectrograms to be synthesized> \ 
+    --out_dir <Path to the dir where the generated waveforms will be saved>
+```
 ## Acknowledgements
 
 The code in this repository is based on the code in the following repositories
