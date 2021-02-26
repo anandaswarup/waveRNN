@@ -74,5 +74,6 @@ if __name__ == "__main__":
 
     checkpoint_path = args.checkpoint_path
     eval_data_dir = args.eval_data_dir
+    out_dir = args.out_dir
 
     generate(checkpoint_path, eval_data_dir, out_dir)
