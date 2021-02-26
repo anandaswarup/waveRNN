@@ -6,21 +6,24 @@
 </head>
 <body>
     <header>
-	    <h1> PyTorch implementation of a waveRNN based neural vocoder </h1>
+	    <h1> PyTorch implementation of a WaveRNN based neural vocoder </h1>
 	    <p>This page contains samples generated using a trained WaveRNN based neural vocoder, which predicts a raw waveform from a mel-spectrogram.<br>
 	    The code to train the model can be found at the following link <a href="https://github.com/anandaswarup/waveRNN/">https://github.com/anandaswarup/waveRNN/</a>
             </p>
         <hr>
     </header>
     <main>
-	    <p>Dataset: <a href="https://keithito.com/LJ-Speech-Dataset/"> LJSpeech </a> <br>
-	    11790 wav files (~23 hrs) was used for training; while 1310 wav files were held out for evaluation. <br>
-	    Few of the samples are given below.
+	    <p>
+	    	Dataset: <a href="https://keithito.com/LJ-Speech-Dataset/"> LJSpeech </a> <br>
+	    	Train/Test split: 11790 wav files (~23 hrs) was used for training; while 1310 wav files were held out for evaluation <br>
+		Model was trained for 200k steps on a single Nvidia GTX 1080Ti GPU, and the trained model was used to generate raw waveforms from mel-spectrograms for the held out eval set <br>
+		A few randomly selected samples from the held out eval set are presented below, along with the original waveforms
+	    
 	    </p>
 	    <table>
 		    <thread>
 		    	<th> Original </th>
-		    	<th> Generated (analysis-by-synthesis) </th>
+		    	<th> Generated (Using WaveRNN model) </th>
 		    </thread>
 		    <tbody>
 			    <tr>
